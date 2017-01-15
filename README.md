@@ -17,6 +17,6 @@ in .vscode folder (folder for workspace specific settings) add next tasks.json:
 ```
 **where**: *${file}* - vscode substitution for absolute path for current open file
 
-**important**: ginstall must be in PATH
+**important**: *ginstall* must be in PATH
 
 now u can use vscode build command (Cmd+Shift+B), it runs *ginstall ${file}*

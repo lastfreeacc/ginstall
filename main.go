@@ -45,7 +45,7 @@ func init() {
 }
 
 // findMainDir returns dir that contains main.go file
-// if it can not found then return input path
+// if it could not found then returns input path
 func findMainDir(installPath string) string {
 	tryFindMain := installPath
 	for len(tryFindMain) > 1 { // exit then tryFindMain = ".", TODO: need more strong condition

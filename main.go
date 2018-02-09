@@ -6,6 +6,8 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
+	"strings"
 )
 
 const maingo = "main.go"
@@ -19,6 +21,10 @@ func main() {
 	file := filepath.Clean(os.Args[1])
 	dir, _ := filepath.Split(file)
 	pre := dir[:len(gosrc)]
+	if runtime.GOOS == "windows" {
+		pre = strings.ToUpper(pre)
+		gosrc = strings.ToUpper(gosrc)
+	}
 	if pre != gosrc {
 		log.Fatalf("[Error] Current package {%s} is not in GOPATH {%s}\n", dir, gopath)
 	}
